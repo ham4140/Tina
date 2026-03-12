@@ -79,7 +79,7 @@
           },
           {
             "label": "GitHub",
-            "href": "https://github.com/facebook/docusaurus",
+            "href": "https://github.com/ham4140/Tina",
             "_template": "external"
           }
         ]
@@ -87,5 +87,5 @@
     ],
     "copyright": "My Project, Inc. Built with Docusaurus."
   },
-  "url": "https://tinasaurus.vercel.app/"
+  "url": "https://ham4140.github.io"
 }
