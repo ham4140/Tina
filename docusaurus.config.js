@@ -88,14 +88,18 @@ const formatNavbarItem = (item, subnav = false) => {
 const config = {
   title: docusaurusData.title || "My Site",
   tagline: docusaurusData.tagline || "Dinosaurs are cool",
-  url: docusaurusData.url || "https://tinasaurus.vercel.app/",
-  baseUrl: "/",
+
+  url: "https://ham4140.github.io",
+  baseUrl: "/Tina/",
+
+  organizationName: "ham4140",
+  projectName: "Tina",
+  deploymentBranch: "gh-pages",
+
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -104,7 +108,6 @@ const config = {
   presets: [
     [
       "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
@@ -121,37 +124,35 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: docusaurusData.title || "",
-        logo: {
-          alt: docusaurusData?.logo?.alt
-            ? docusaurusData?.logo?.alt
-            : "My Logo",
-          src: docusaurusData?.logo?.src
-            ? docusaurusData?.logo?.src
-            : "img/logo.svg",
-        },
-        items: docusaurusData.navbar.map((item) => {
-          return formatNavbarItem(item);
-        }),
+  themeConfig: ({
+    navbar: {
+      title: docusaurusData.title || "",
+      logo: {
+        alt: docusaurusData?.logo?.alt
+          ? docusaurusData?.logo?.alt
+          : "My Logo",
+        src: docusaurusData?.logo?.src
+          ? docusaurusData?.logo?.src
+          : "img/logo.svg",
       },
-      footer: {
-        style: docusaurusData.footer?.style || "dark",
-        links: docusaurusData.footer?.links.map((item) => {
-          return formatFooterItem(item);
-        }),
-        copyright:
-          `Copyright © ${new Date().getFullYear()} ` +
-          (docusaurusData.footer?.copyright || docusaurusData.title),
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
+      items: docusaurusData.navbar.map((item) => {
+        return formatNavbarItem(item);
+      }),
+    },
+    footer: {
+      style: docusaurusData.footer?.style || "dark",
+      links: docusaurusData.footer?.links.map((item) => {
+        return formatFooterItem(item);
+      }),
+      copyright:
+        `Copyright © ${new Date().getFullYear()} ` +
+        (docusaurusData.footer?.copyright || docusaurusData.title),
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+    },
+  }),
 };
 
 module.exports = config;
